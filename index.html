@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Feliz Cumpleaños, Mi Amor</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe Script', cursive;
+      background: radial-gradient(circle at top, #ffe4e1, #ffc0cb);
+      overflow: hidden;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #880e4f;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      animation: fadeIn 2.5s ease-in-out;
+    }
+
+    .imagen-novia {
+      max-width: 300px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      margin: 20px 0;
+      animation: fadeIn 3s ease-in-out;
+    }
+
+    .carta {
+      width: 300px;
+      background: #fff0f5;
+      border: 2px solid #ff99cc;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      animation: zoomIn 2s ease forwards;
+      position: relative;
+    }
+
+    .carta::before {
+      content: "💌";
+      font-size: 2rem;
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .carta p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4b5c;
+      transform: rotate(45deg);
+      animation: float 8s ease-in infinite;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff4b5c;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 25px;
+      background-color: #ff6fa1;
+      color: white;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    @keyframes zoomIn {
+      0% { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    footer {
+      position: absolute;
+      bottom: 15px;
+      font-size: 1rem;
+      color: #6d214f;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎉 ¡Feliz Cumpleaños, Mi Amor! 🎂</h1>
+  <h2>Para la persona más hermosa del universo 💖</h2>
+
+  <!-- Imagen de tu novia -->
+  <img src="1p.jpg" alt="Mi Novia" class="imagen-novia">
+
+  <!-- Carta de amor -->
+  <div class="carta">
+    <p>
+      Hoy celebro tu sonrisa, tu dulzura y todo lo que eres. <br>
+      Eres mi sol, mi paz y mi inspiración. <br><br>
+      ¡Te amo con todo mi corazón! ❤️<br>
+      Siempre tuyo.
+    </p>
+  </div>
+
+  <!-- Botón para reproducir la canción -->
+  <button onclick="document.getElementById('musica').play()">▶️ Reproducir canción</button>
+
+  <!-- Canción local -->
+  <audio id="musica">
+    <source src="Cults - Always Forever.mp3" type="audio/mpeg">
+    Tu navegador no soporta el audio.
+  </audio>
+  <!-- Botón para ir al álbum -->
+<a href="fotos1.html">
+  <button>📸 Ver Nuestro Álbum</button>
+</a>
+
+  <!-- Corazones animados -->
+  <script>
+    function crearCorazones() {
+      const cantidad = 10;
+      for (let i = 0; i < cantidad; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.animationDuration = (6 + Math.random() * 4) + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 10000);
+      }
+    }
+    setInterval(crearCorazones, 1000);
+  </script>
+
+  <footer>Con amor, tu novio 💘</footer>
+
+</body>
+</html>
